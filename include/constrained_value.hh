@@ -3,14 +3,32 @@
 
 namespace range 
 {
-  template<typename T, T min, T max>
-  struct constrained_value
+  namespace ct 
   {
-    void operator=(const T && o);
+    template<typename T, T min, T max>
+    struct constrained_value
+    {
+      void operator=(const T && o);
 
-    private:
-    T _data;
-  };
+      private:
+      T _data;
+    };
+  } //!ct
+  namespace rt 
+  {
+    template<typename T>
+    struct constrained_value
+    {
+      constrained_value(const T && o, T min, T max);
+
+      void operator=(const T && o);
+
+      private:
+      T _min,
+        _max;
+      T _data;
+    };
+  } //!rt
 } //!range
 
 #include "constrained_value.hxx"

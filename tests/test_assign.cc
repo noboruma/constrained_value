@@ -2,6 +2,7 @@
 
 int main(int argc, const char **argv)
 {
-  range::constrained_value<int, -10, 10> v;
+  range::ct::constrained_value<int, -10, 10> vct;
+  range::rt::constrained_value<int> vrt(0, -10, 10);
   return 0;
 }
