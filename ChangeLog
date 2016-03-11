@@ -1,0 +1,5 @@
+03-11-2016	Thomas Legris
+
+ * include/constrained_value.hh: New file, init commit.
+ * include/constrained_value.hxx: Likewise.
+ * tests/test_assign.cc: Likewise.
